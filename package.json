@@ -1,0 +1,45 @@
+{
+  "name": "text-scrambler",
+  "version": "1.0.0",
+  "description": "JavaScript library for scrambling text effects",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch-all",
+    "lint": "eslint --ext js ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sogoagain/text-scrambler-js.git"
+  },
+  "keywords": [
+    "text",
+    "scrambler"
+  ],
+  "author": "sogoagain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sogoagain/text-scrambler-js/issues"
+  },
+  "homepage": "https://github.com/sogoagain/text-scrambler-js#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@types/jest": "^26.0.7",
+    "babel-jest": "^26.2.1",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "given2": "^2.1.7",
+    "jest": "^26.2.1",
+    "jest-plugin-context": "^2.9.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.10.4"
+  }
+}
