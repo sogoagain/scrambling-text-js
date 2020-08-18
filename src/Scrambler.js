@@ -1,6 +1,6 @@
-export default class TextScrambler {
+export default class Scrambler {
   constructor() {
-    this.specialCharacters = ['?', '@', '#', '$', '%', '£', '&', '*', '§', '+'];
+    this.specialCharacters = ['@', '#', '$', '%', '£', '&', '*', '§', '+', '_'];
     this.maxCounter = 12;
 
     this.targetText = '';
@@ -59,7 +59,7 @@ export default class TextScrambler {
       }
     }
 
-    this.frameIndex = (this.frameIndex + 1) % 5;
+    this.frameIndex = (this.frameIndex + 1) % 3;
     this.frameId = requestAnimationFrame(() => this._encode());
   }
 
@@ -76,7 +76,7 @@ export default class TextScrambler {
       this.onScramble(this.scrambledText);
     }
 
-    this.frameIndex = (this.frameIndex + 1) % 3;
+    this.frameIndex = (this.frameIndex + 1) % 2;
     this.frameId = requestAnimationFrame(() => this._fill());
   }
 
@@ -103,7 +103,7 @@ export default class TextScrambler {
       this.onScramble(this.scrambledText);
     }
 
-    this.frameIndex = (this.frameIndex + 1) % 5;
+    this.frameIndex = (this.frameIndex + 1) % 4;
     this.frameId = requestAnimationFrame(() => this._decode());
   }
 }

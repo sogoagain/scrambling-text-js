@@ -1,17 +1,14 @@
-## Mac OS x
+**/.*
+coverage/
+examples/
+node_modules/
+src/
+.eslint.js
+babel.config.js
+package-lock.json
+webpack.*.js
+
 .DS_*
-
-## IntelliJ
 .idea
-
-## VS Code
 .vscode
 
-## Node.js
-node_modules
-
-## Jest
-coverage
-
-## Source
-src

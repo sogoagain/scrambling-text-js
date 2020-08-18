@@ -1,4 +1,4 @@
-import TextScrambler from './TextScrambler';
+import Scrambler from './Scrambler';
 
 const texts = [
   '- Friedrich Nietzsche -',
@@ -7,7 +7,7 @@ const texts = [
   'There are no facts, only interpretations.',
 ];
 
-describe('TextScrambler', () => {
+describe('Scrambler', () => {
   beforeEach(() => {
     jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => cb());
   });
@@ -19,7 +19,7 @@ describe('TextScrambler', () => {
   it('scrambles text', () => {
     const handleScramble = jest.fn();
 
-    const scrambler = new TextScrambler();
+    const scrambler = new Scrambler();
 
     texts.forEach((text) => {
       scrambler.scramble(text, handleScramble);

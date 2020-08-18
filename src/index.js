@@ -1,3 +1,3 @@
-import TextScrambler from './TextScrambler';
+import Scrambler from './Scrambler';
 
-export default TextScrambler;
+export default Scrambler;

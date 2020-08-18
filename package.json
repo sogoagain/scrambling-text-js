@@ -1,8 +1,8 @@
 {
-  "name": "text-scrambler",
+  "name": "scrambling-text",
   "version": "1.0.0",
-  "description": "JavaScript library for scrambling text effects",
-  "main": "dist/text-scrambler.js",
+  "description": "A very simple JavaScript library written in vanilla js for scrambling text.",
+  "browser": "dist/scrambling-text.js",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -12,11 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sogoagain/text-scrambler-js.git"
+    "url": "git+https://github.com/sogoagain/scrambling-text-js.git"
   },
   "keywords": [
     "text",
+    "scramble",
     "scrambler",
+    "scrambling",
+    "scrambling-text",
+    "scrambling text",
+    "text scrambler",
     "effect",
     "animation",
     "transition"
@@ -28,9 +33,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sogoagain/text-scrambler-js/issues"
+    "url": "https://github.com/sogoagain/scrambling-text-js/issues"
   },
-  "homepage": "https://github.com/sogoagain/text-scrambler-js#readme",
+  "homepage": "https://github.com/sogoagain/scrambling-text-js#readme",
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
