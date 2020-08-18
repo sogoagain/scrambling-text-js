@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Scrambler Example</title>
+  </head>
+  <body>
+    <h1 id="text"></h1>
+    <script src="https://unpkg.com/text-scrambler"></script>
+    <script>
+      const texts = [
+        '- Friedrich Nietzsche -',
+        'Thinking has to be learned in the way dancing has to be learned.',
+        'The doer alone learneth.',
+        'There are no facts, only interpretations.',
+      ];
+      const scramble = new TextScrambler();
+      const handleScramble = (text) => {
+        const el = document.getElementById('text');
+        el.innerHTML = text;
+      }
+
+      let i = 0;
+      setTimeout(() => {
+        scrambler.scramble(text[i], handleScramble);
+        i += 1;
+        i %= texts.length;
+      }, 3000);
+    </script>
+  </body>
+</html>

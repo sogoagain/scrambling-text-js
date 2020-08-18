@@ -2,12 +2,13 @@
   "name": "text-scrambler",
   "version": "1.0.0",
   "description": "JavaScript library for scrambling text effects",
-  "main": "index.js",
+  "main": "dist/text-scrambler.js",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch-all",
-    "lint": "eslint --ext js ."
+    "lint": "eslint --ext js .",
+    "build": "webpack --mode production --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -15,10 +16,17 @@
   },
   "keywords": [
     "text",
-    "scrambler"
+    "scrambler",
+    "effect",
+    "animation",
+    "transition"
   ],
-  "author": "sogoagain",
-  "license": "ISC",
+  "author": {
+    "name": "sogoagain",
+    "email": "imyong0@gmail.com",
+    "url": "https://sogoagain.github.io"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sogoagain/text-scrambler-js/issues"
   },
@@ -37,7 +45,9 @@
     "eslint-plugin-react-hooks": "^4.0.0",
     "given2": "^2.1.7",
     "jest": "^26.2.1",
-    "jest-plugin-context": "^2.9.0"
+    "jest-plugin-context": "^2.9.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4"
