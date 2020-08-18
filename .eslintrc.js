@@ -49,5 +49,6 @@ module.exports = {
     'linebreak-style': 'off',
     'no-proto': 'off',
     'no-continue': 'off',
+    'no-underscore-dangle': 'off',
   },
 };
