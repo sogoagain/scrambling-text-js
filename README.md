@@ -1,27 +1,25 @@
-<div align="center">
-<h1>Scrambling Text</h1>
-
-<img
-  alt="scrambling text sample"
-  src="https://raw.githubusercontent.com/sogoagain/scrambling-text-js/master/sample.gif"
-/>
-
-<p>A very simple JavaScript library written in vanilla js for scrambling text.</p>
-<a href="https://sogoagain.github.io/scrambling-text-js/index.html">Demo Page<a>
-
-<br />
-</div>
-
-<hr />
-
-<p>
-  <a href="https://nodei.co/npm/scrambling-text/"><img src="https://nodei.co/npm/scrambling-text.png?downloads=true&downloadRank=true&stars=true"></a>
-</p>
-<p>
-  <a href="https://github.com/sogoagain/scrambling-text-js/actions?query=workflow%3A%22main+CI%22"><img alt="main CI status" src="https://github.com/sogoagain/scrambling-text-js/workflows/main%20CI/badge.svg"></a>
-  <a href="https://github.com/sogoagain/scrambling-text-js/actions?query=workflow%3A%22Node.js+Package%22"><img alt="Node.js Package status" src="https://github.com/sogoagain/scrambling-text-js/workflows/Node.js%20Package/badge.svg"></a>
-</p>
 [![HitCount](http://hits.dwyl.com/sogoagain/scrambling-text-js.svg)](http://hits.dwyl.com/sogoagain/scrambling-text-js)
+<div align="center">
+  <h1>Scrambling Text</h1>
+
+  <img
+    alt="scrambling text sample"
+    src="https://raw.githubusercontent.com/sogoagain/scrambling-text-js/master/sample.gif"
+  />
+
+  <p>A very simple JavaScript library written in vanilla js for scrambling text.</p>
+  <a href="https://sogoagain.github.io/scrambling-text-js/index.html">Demo Page<a>
+
+  <br />
+  <hr />
+  <p>
+    <a href="https://nodei.co/npm/scrambling-text/"><img src="https://nodei.co/npm/scrambling-text.png?downloads=true&downloadRank=true&stars=true"></a>
+  </p>
+  <p>
+    <a href="https://github.com/sogoagain/scrambling-text-js/actions?query=workflow%3A%22main+CI%22"><img alt="main CI status" src="https://github.com/sogoagain/scrambling-text-js/workflows/main%20CI/badge.svg"></a>
+    <a href="https://github.com/sogoagain/scrambling-text-js/actions?query=workflow%3A%22Node.js+Package%22"><img alt="Node.js Package status" src="https://github.com/sogoagain/scrambling-text-js/workflows/Node.js%20Package/badge.svg"></a>
+  </p>
+</div>
 
 ## Table of Contents
 
