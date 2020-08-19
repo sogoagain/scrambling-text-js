@@ -1,8 +1,8 @@
 {
   "name": "scrambling-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A very simple JavaScript library written in vanilla js for scrambling text.",
-  "browser": "dist/scrambling-text.js",
+  "main": "dist/scrambling-text.js",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
