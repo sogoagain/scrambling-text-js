@@ -1,4 +1,3 @@
-[![HitCount](http://hits.dwyl.com/sogoagain/scrambling-text-js.svg)](http://hits.dwyl.com/sogoagain/scrambling-text-js)
 <div align="center">
   <h1>Scrambling Text</h1>
 
