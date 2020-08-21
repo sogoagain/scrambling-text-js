@@ -1,6 +1,6 @@
 {
   "name": "scrambling-text",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A very simple JavaScript library written in vanilla js for scrambling text.",
   "main": "dist/scrambling-text.js",
   "scripts": {
