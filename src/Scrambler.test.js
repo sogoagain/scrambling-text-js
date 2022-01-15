@@ -8,8 +8,11 @@ const texts = [
 ];
 
 describe('Scrambler', () => {
+  const handleScramble = jest.fn();
+
   beforeEach(() => {
     jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => cb());
+    handleScramble.mockClear();
   });
 
   afterEach(() => {
@@ -17,13 +20,32 @@ describe('Scrambler', () => {
   });
 
   it('scrambles text', () => {
-    const handleScramble = jest.fn();
-
     const scrambler = new Scrambler();
 
     texts.forEach((text) => {
       scrambler.scramble(text, handleScramble);
       expect(handleScramble).toHaveBeenLastCalledWith(text);
     });
+  });
+
+  describe('with the option to set the characters to use when scrambled', () => {
+    it('scrambles text', () => {
+      const scrambler = new Scrambler();
+
+      texts.forEach((text) => {
+        scrambler.scramble(text, handleScramble, {
+          charactersToUseWhenScrambling: ['a', 'b', 'c'],
+        });
+        expect(handleScramble).toHaveBeenLastCalledWith(text);
+      });
+    });
+  });
+
+  it('provides default characters', () => {
+    const defaultCharacters = Scrambler.CHARACTERS.DEFAULT;
+    defaultCharacters.includes('*', '@');
+
+    const alphabetCharacters = Scrambler.CHARACTERS.ALPHABET;
+    alphabetCharacters.includes('a', 'b', 'c', 'd', 'e');
   });
 });
