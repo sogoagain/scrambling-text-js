@@ -34,7 +34,7 @@ describe('Scrambler', () => {
 
       texts.forEach((text) => {
         scrambler.scramble(text, handleScramble, {
-          charactersToUseWhenScrambling: ['a', 'b', 'c'],
+          characters: ['a', 'b', 'c'],
         });
         expect(handleScramble).toHaveBeenLastCalledWith(text);
       });

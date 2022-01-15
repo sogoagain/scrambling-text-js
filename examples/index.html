@@ -43,7 +43,7 @@
       const targetText = TEXTS[i % TEXTS.length];
       if (i == 2) {
         scrambler.scramble(targetText, handleScramble, {
-          charactersToUseWhenScrambling: Scrambler.CHARACTERS.ALPHABET,
+          characters: Scrambler.CHARACTERS.ALPHABET,
         });
       } else {
         scrambler.scramble(targetText, handleScramble);
