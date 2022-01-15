@@ -58,7 +58,7 @@ scrambler.scramble('- Friedrich Nietzsche -', handleScramble);
 
 // call scramble with the option to set the characters to use when scrambled.
 scrambler.scramble(text, handleScramble, {
-  charactersToUseWhenScrambling: ['a', 'b', 'c'],
+  characters: ['a', 'b', 'c'],
 });
 
 // Scrambler provides several characters.

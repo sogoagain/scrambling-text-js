@@ -7,7 +7,7 @@ export default class Scrambler {
   }
 
   constructor() {
-    this.charactersToUseWhenScrambling = [...Scrambler.CHARACTERS.DEFAULT];
+    this.characters = [...Scrambler.CHARACTERS.DEFAULT];
     this.maxCounter = 12;
 
     this.targetText = '';
@@ -21,10 +21,10 @@ export default class Scrambler {
   }
 
   scramble(text, onScramble, option = null) {
-    if (option?.charactersToUseWhenScrambling) {
-      this.charactersToUseWhenScrambling = [...option.charactersToUseWhenScrambling];
+    if (option?.characters) {
+      this.characters = [...option.characters];
     } else {
-      this.charactersToUseWhenScrambling = [...Scrambler.CHARACTERS.DEFAULT];
+      this.characters = [...Scrambler.CHARACTERS.DEFAULT];
     }
     this.targetText = text;
     this.encodingCounters = this._generateCounters(this.scrambledText);
@@ -40,8 +40,8 @@ export default class Scrambler {
   _randomText(length) {
     let text = '';
     for (let i = 0; i < length; i += 1) {
-      text += this.charactersToUseWhenScrambling[
-        Math.floor(Math.random() * this.charactersToUseWhenScrambling.length)
+      text += this.characters[
+        Math.floor(Math.random() * this.characters.length)
       ];
     }
     return text;
@@ -108,8 +108,8 @@ export default class Scrambler {
           decodingText += this.targetText[i];
           continue;
         }
-        decodingText += this.charactersToUseWhenScrambling[Math.floor(
-          Math.random() * this.charactersToUseWhenScrambling.length,
+        decodingText += this.characters[Math.floor(
+          Math.random() * this.characters.length,
         )];
         this.decodingCounters[i] -= 1;
       }
