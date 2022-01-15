@@ -1,6 +1,13 @@
 export default class Scrambler {
+  static get CHARACTERS() {
+    return {
+      DEFAULT: ['@', '#', '$', '%', '£', '&', '*', '§', '+', '_'],
+      ALPHABET: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+    };
+  }
+
   constructor() {
-    this.specialCharacters = ['@', '#', '$', '%', '£', '&', '*', '§', '+', '_'];
+    this.charactersToUseWhenScrambling = [...Scrambler.CHARACTERS.DEFAULT];
     this.maxCounter = 12;
 
     this.targetText = '';
@@ -13,7 +20,12 @@ export default class Scrambler {
     this.frameIndex = 0;
   }
 
-  scramble(text, onScramble) {
+  scramble(text, onScramble, option = null) {
+    if (option?.charactersToUseWhenScrambling) {
+      this.charactersToUseWhenScrambling = [...option.charactersToUseWhenScrambling];
+    } else {
+      this.charactersToUseWhenScrambling = [...Scrambler.CHARACTERS.DEFAULT];
+    }
     this.targetText = text;
     this.encodingCounters = this._generateCounters(this.scrambledText);
     this.decodingCounters = this._generateCounters(this.targetText);
@@ -28,7 +40,9 @@ export default class Scrambler {
   _randomText(length) {
     let text = '';
     for (let i = 0; i < length; i += 1) {
-      text += this.specialCharacters[Math.floor(Math.random() * this.specialCharacters.length)];
+      text += this.charactersToUseWhenScrambling[
+        Math.floor(Math.random() * this.charactersToUseWhenScrambling.length)
+      ];
     }
     return text;
   }
@@ -94,8 +108,8 @@ export default class Scrambler {
           decodingText += this.targetText[i];
           continue;
         }
-        decodingText += this.specialCharacters[Math.floor(
-          Math.random() * this.specialCharacters.length,
+        decodingText += this.charactersToUseWhenScrambling[Math.floor(
+          Math.random() * this.charactersToUseWhenScrambling.length,
         )];
         this.decodingCounters[i] -= 1;
       }

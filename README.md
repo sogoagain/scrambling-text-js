@@ -55,6 +55,15 @@ const handleScramble = (text) => {
 
 // call scramble function with the text to be scrambled and handler.
 scrambler.scramble('- Friedrich Nietzsche -', handleScramble);
+
+// call scramble with the option to set the characters to use when scrambled.
+scrambler.scramble(text, handleScramble, {
+  charactersToUseWhenScrambling: ['a', 'b', 'c'],
+});
+
+// Scrambler provides several characters.
+console.log(Scrambler.CHARACTERS.DEFAULT);
+console.log(Scrambler.CHARACTERS.ALPHABET);
 ```
 
 ### React Example
