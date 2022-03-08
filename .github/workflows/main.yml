@@ -15,29 +15,29 @@ jobs:
         id: check-opened-pr-step
         uses: sogoagain/check-opened-pr-action@v0.1
       - uses: actions/checkout@v2
-        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        if: github.event_name != 'push' || steps.check-opened-pr-step.outputs.exists == 'false'
       - name: Use Node.js ${{ matrix.node-version }}
-        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        if: github.event_name != 'push' || steps.check-opened-pr-step.outputs.exists == 'false'
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install
-        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        if: github.event_name != 'push' || steps.check-opened-pr-step.outputs.exists == 'false'
         run: npm ci
       - name: Test
-        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        if: github.event_name != 'push' || steps.check-opened-pr-step.outputs.exists == 'false'
         run: npm test
       - name: Lint
-        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        if: github.event_name != 'push' || steps.check-opened-pr-step.outputs.exists == 'false'
         run: npm run lint
       - name: Build
-        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        if: github.event_name != 'push' || steps.check-opened-pr-step.outputs.exists == 'false'
         run: npm run build
       - name: Copy
-        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        if: github.event_name != 'push' || steps.check-opened-pr-step.outputs.exists == 'false'
         run: cp ./dist/scrambling-text.js ./examples/scrambling-text.js
       - name: Deploy to GitHub Pages
-        if: (github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists) && github.ref == 'refs/heads/master'
+        if: (github.event_name != 'push' || steps.check-opened-pr-step.outputs.exists == 'false') && github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
           BRANCH: gh-pages
