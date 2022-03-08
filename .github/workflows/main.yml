@@ -11,25 +11,35 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
+      - name: Check opened PR
+        id: check-opened-pr-step
+        uses: sogoagain/check-opened-pr-action@v0.1
+      - uses: actions/checkout@v2
+        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+      - name: Use Node.js ${{ matrix.node-version }}
+        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        uses: actions/setup-node@v1
+        with:
           node-version: ${{ matrix.node-version }}
-    - name: Install
-      run: npm ci
-    - name: Test
-      run: npm test
-    - name: Lint
-      run: npm run lint
-    - name: Build
-      run: npm run build
-    - name: Copy
-      run: cp ./dist/scrambling-text.js ./examples/scrambling-text.js
-    - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/master'
-      uses: JamesIves/github-pages-deploy-action@3.5.9
-      with:
-        BRANCH: gh-pages
-        FOLDER: examples
-        BASE_BRANCH: master
+      - name: Install
+        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        run: npm ci
+      - name: Test
+        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        run: npm test
+      - name: Lint
+        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        run: npm run lint
+      - name: Build
+        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        run: npm run build
+      - name: Copy
+        if: github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists
+        run: cp ./dist/scrambling-text.js ./examples/scrambling-text.js
+      - name: Deploy to GitHub Pages
+        if: (github.event_name != 'push' || !steps.check-opened-pr-step.outputs.exists) && github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@3.5.9
+        with:
+          BRANCH: gh-pages
+          FOLDER: examples
+          BASE_BRANCH: master
