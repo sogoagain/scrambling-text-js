@@ -41,7 +41,7 @@
     let i = 0;
     function printText() {
       const targetText = TEXTS[i % TEXTS.length];
-      if (i == 2) {
+      if (i++ % 3 == 2) {
         scrambler.scramble(targetText, handleScramble, {
           characters: Scrambler.CHARACTERS.ALPHABET,
         });
@@ -49,7 +49,6 @@
         scrambler.scramble(targetText, handleScramble);
       }
       setTimeout(printText, 5000);
-      i++;
     }
     printText();
   </script>
